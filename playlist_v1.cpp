@@ -16,10 +16,6 @@ struct song {
 };
 
 int main() {
-    
-    //std::ofstream playlist;
-    //verbinden mit TExtdatei
-    //playlist.open ("C:\Users\Admin\Desktop\Code\VSC\swt_projekt_playlist\playlist.txt");
 
     //textfile aufrufen
     std::ifstream f("C:/Users/Admin/Desktop/Code/VSC/swt_projekt_playlist/playlist.txt");
@@ -41,4 +37,3 @@ int main() {
 
     return 0;
 }
-
