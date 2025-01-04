@@ -1,0 +1,31 @@
+"Kendrick Lamar"		"man at te garden"		"american rap"			3:52
+"Red Hot Chili Peppers"		"Look Around"			"alternative/indie"		3:28
+"Tyler, The Creator"		"GONE,GONE/THANK YOU"		"alternative hip-hop"		6:15
+"Tyler, The Creator"		"CORSO"				"alternative hip-hop"		2:26
+"Mac Miller, Bilal"		"Congratulations(feat. Bilal)"	"hip-hop/rap"			4:16
+"Mac Miller"			"Good News"			"hip-hop/rap"			5:42
+"Kali Uchis"			"Te Mata"			"r&b neo soul latin"		3:52
+"Linkin Park"			"The Emptyness Machine"		"nu metal/heavy metal"		3:10
+"Linkin Park"			"BURN IT DOWN"			"nu metal/heavy metal"		3:50
+"Linkin Park"			"In the End"			"nu metal/heavy metal"		3:36
+"Mac Miller"			"Perfecto"			"hip-hop/rap"			3:35
+"Mac Miller"			"2009"				"hip-hop/rap"			5:47
+"Lana Del Rey"			"Video Games"			"pop/r&b/hip-hop"		4:41
+"Lana Del Rey"			"Ultraviolence"			"pop/r&b/hip-hop"		4:11
+"Fleetwood Mac"			"As Long as You Follow"		"soft rock/folk/hard rock"	4:18
+"Fleetwood Mac"			"Silver Springs"		"soft rock/folk/hard rock"	4:48
+"Fleetwood Mac"			"The Chain"			"soft rock/folk/hard rock"	4:30
+"Fleetwood Mac"			"Isn't It Midnight"		"soft rock/folk/hard rock"	4:13
+"Fleetwood Mac"			"Tango in the Night"		"soft rock/folk/hard rock"	4:02
+"Fleetwood Mac"			"Caroline"			"soft rock/folk/hard rock"	3:53
+"Blue Öyster Cult"		"(Don't Fear)The Reaper"	"classic rock"			5:08
+"Hall & Oates"			"Out of Touch"			"pop rock"			4:09
+"Red Hot Chili Peppers"		"Torture Me"			"alternative/indie"		3:44
+"Red Hot Chili Peppers"		"Charlie"			"alternative/indie"		4:37
+
+					
+	
+
+
+
+
