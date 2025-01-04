@@ -22,7 +22,7 @@ int main() {
     //playlist.open ("C:\Users\Admin\Desktop\Code\VSC\swt_projekt_playlist\playlist.txt");
 
     //textfile aufrufen
-    std::ifstream f("playlist.txt");
+    std::ifstream f("C:/Users/Admin/Desktop/Code/VSC/swt_projekt_playlist/playlist.txt");
 
     //prüfen, ob textfile geoeffnet werden konnte
     if(!f.is_open()) {
