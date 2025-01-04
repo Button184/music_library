@@ -15,7 +15,6 @@ struct song {
 
 int main() {
     
-    
 
     return 0;
 }
