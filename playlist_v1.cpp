@@ -1,5 +1,4 @@
-// bei änderungen: git status -> git commit -am "update [beschreibung]"
-// -> git push origin m
+// bei änderungen: git status ->  git commit -am "update [beschreibung]" ->  git push u origin main
 
 #include <iostream>
 
