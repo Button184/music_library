@@ -3,7 +3,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream> //header zum einlesen von textdatei die songs contained
 
+//struct fuer liedinfo
 struct song {
 
     std::string artist; 
@@ -15,6 +17,27 @@ struct song {
 
 int main() {
     
+    //std::ofstream playlist;
+    //verbinden mit TExtdatei
+    //playlist.open ("C:\Users\Admin\Desktop\Code\VSC\swt_projekt_playlist\playlist.txt");
+
+    //textfile aufrufen
+    std::ifstream f("playlist.txt");
+
+    //prüfen, ob textfile geoeffnet werden konnte
+    if(!f.is_open()) {
+        std::cerr << "Datei konnte nicht geoeffnet werden";
+        return 1;
+    }
+
+    std::string s;
+
+    //zeile fuer zeile einlesen
+    while(getline(f,s))
+        std::cout << s << std::endl;
+
+    //datei schliessen
+    f.close();
 
     return 0;
 }
