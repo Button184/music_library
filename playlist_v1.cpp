@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <fstream> //header zum einlesen von textdatei die songs contained
+#include <fstream> //header zum einlesen von textdatei die songs containen
 
 //struct fuer liedinfo
 struct song {
