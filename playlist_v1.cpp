@@ -13,9 +13,23 @@ struct song {
     std::string genre;
     int duration;
 
+    // --- void functions fuer die funktionen des programms erstellen ---//
+
 };
 
 int main() {
+
+
+    // --- programmdurchfuehrung mit cout
+
+    // --- benutzeraufforderung mit cout, cin
+
+    // -- switch-case fuer einzelne func
+
+    // -- void func am ende nach main
+
+
+
 
     //textfile aufrufen
     std::ifstream f("C:/Users/Admin/Desktop/Code/VSC/swt_projekt_playlist/playlist.txt");
@@ -37,3 +51,5 @@ int main() {
 
     return 0;
 }
+
+// ---  hier die void func
