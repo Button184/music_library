@@ -1,5 +1,7 @@
 // bei änderungen: git status ->  git commit -am "update [beschreibung]" ->  git push u origin main
 
+// git status | git add . | git commit -(a)m "" (programm, ansonsten nur -m) | git pull | git push
+
 #include <iostream>
 #include <string>
 #include <vector>
