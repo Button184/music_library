@@ -23,35 +23,41 @@ using namespace std;
 
 int main() {
 
+    int auswahl;
 
     // --- programmdurchfuehrung mit cout
 
+    do {
+        cout<<"**************************"<<endl;
+        cout<<"Willkommen im Music Player"<<endl;
+        cout<<"**************************"<<endl;
+        cout<<"1."<<endl;
+        cout<<"2."<<endl;
+        cout<<"3."<<endl;
+        cout<<"4."<<endl;
+        cout<<"5."<<endl;
+        cout<<"6."<<endl;
+        cout<<"7. Programm beenden"<<endl;
+    
+
     // --- benutzeraufforderung mit cout, cin
 
+    cout << "Wähle eine Aktion aus (1-7):";
+    cin >> auswahl;
+
+    
     // -- switch-case fuer einzelne func
 
-    // -- void func am ende nach main
+        switch(auswahl) {
+            case 1:
+                //func1
+                break;
 
+            default:
+            cout<<"Falsche Eingabe! Wähle eine Auswahl von 1-7."<<endl;
+        }
 
-
-
-    //textfile aufrufen
-    std::ifstream f("C:/Users/Admin/Desktop/Code/VSC/swt_projekt_playlist/playlist.txt");
-
-    //prüfen, ob textfile geoeffnet werden konnte
-    if(!f.is_open()) {
-        cerr << "Datei konnte nicht geoeffnet werden";
-        return 1;
-    }
-
-    string s;
-
-    //zeile fuer zeile einlesen
-    while(getline(f,s))
-        cout << s << std::endl;
-
-    //datei schliessen
-    f.close();
+    }   while(auswahl !=7);
 
     return 0;
 }
@@ -59,6 +65,23 @@ int main() {
 //  void func
 
     void BibliothekEinlesen() {
+
+        ifstream f("C:/Users/Admin/Desktop/Code/VSC/swt_projekt_playlist/playlist.txt");
+
+        //prüfen, ob textfile geoeffnet werden konnte
+        if(!f.is_open()) {
+            cerr << "Datei konnte nicht geoeffnet werden";      
+        }
+
+        string s;
+
+        //zeile fuer zeile einlesen
+        while(getline(f,s))
+            cout << s << std::endl;
+
+        //datei schliessen
+        f.close();
+
 
     }
 
