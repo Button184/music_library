@@ -1,6 +1,6 @@
 // bei änderungen: git status ->  git commit -am "update [beschreibung]" ->  git push u origin main
 
-// git status | git add . | git commit -(a)m "" (programm, ansonsten nur -m) | git pull | git push
+// git status | git add . | git commit -(a)m "" (programm, ansonsten nur -m) | (git pull) | git push
 
 #include <iostream>
 #include <string>
@@ -15,7 +15,7 @@ struct song {
     std::string genre;
     int duration;
 
-    // --- void functions fuer die funktionen des programms erstellen ---//
+    //void functions fuer die funktionen des programms 
 
     void BibliothekEinlesen();
     void LiedHinzufügen();
@@ -62,4 +62,32 @@ int main() {
     return 0;
 }
 
-// ---  hier die void func
+//  void func
+
+    void BibliothekEinlesen() {
+
+    }
+
+    void LiedHinzufügen() {
+
+    }
+
+    void LiedLoeschen() {
+
+    }
+
+    void Bibliothek() {
+
+    }
+
+    void BibliothekAnzeigen() {
+
+    }
+
+    void BibliothekSpeichern() {
+
+    }
+
+    void SongDataAendern() {
+
+    }
