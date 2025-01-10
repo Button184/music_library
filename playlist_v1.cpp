@@ -15,7 +15,6 @@ using namespace std;
     void BibliothekEinlesen();
     void LiedHinzufügen();
     void LiedLoeschen();
-    void Bibliothek();
     void BibliothekAnzeigen();
     void BibliothekSpeichern();
     void SongDataAendern();
@@ -31,12 +30,12 @@ int main() {
         cout<<"**************************"<<endl;
         cout<<"Willkommen im Music Player"<<endl;
         cout<<"**************************"<<endl;
-        cout<<"1."<<endl;
-        cout<<"2."<<endl;
-        cout<<"3."<<endl;
-        cout<<"4."<<endl;
-        cout<<"5."<<endl;
-        cout<<"6."<<endl;
+        cout<<"1. Bibliothek einlesen"<<endl;
+        cout<<"2. Ein Lied hinzufuegen"<<endl;
+        cout<<"3. Ein Lied aus Playlist entfernen"<<endl;
+        cout<<"4. Bibliothek anzeigen lassen"<<endl;
+        cout<<"5. Bibliothek speichern"<<endl;
+        cout<<"6. Liedinformationen aendern"<<endl;
         cout<<"7. Programm beenden"<<endl;
     
 
@@ -50,20 +49,26 @@ int main() {
 
         switch(auswahl) {
             case 1:
-                //func1
+                void BibliothekEinlesen();
                 break;
             case 2:
+                void LiedHinzufügen();
                 break;
             case 3:
+                void LiedLoeschen();
                 break;
             case 4:
+                void BibliothekAnzeigen();
                 break;
             case 5:
+                void BibliothekSpeichern();
                 break;
             case 6:
+                void SongDataAendern();
                 break;
 
             case 7:
+                cout<<"Programm wird beendet.";
                 break;
 
             default:
@@ -103,10 +108,6 @@ int main() {
     }
 
     void LiedLoeschen() {
-
-    }
-
-    void Bibliothek() {
 
     }
 
