@@ -40,17 +40,30 @@ int main() {
         cout<<"7. Programm beenden"<<endl;
     
 
-    // --- benutzeraufforderung mit cout, cin
+    //Benutzeraufforderung 
 
     cout << "Wähle eine Aktion aus (1-7):";
     cin >> auswahl;
 
     
-    // -- switch-case fuer einzelne func
+    //switch-case fuer einzelne func
 
         switch(auswahl) {
             case 1:
                 //func1
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+
+            case 7:
                 break;
 
             default:
