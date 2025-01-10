@@ -17,6 +17,14 @@ struct song {
 
     // --- void functions fuer die funktionen des programms erstellen ---//
 
+    void BibliothekEinlesen();
+    void LiedHinzufügen();
+    void LiedLoeschen();
+    void Bibliothek();
+    void BibliothekAnzeigen();
+    void BibliothekSpeichern();
+    void SongDataAendern();
+
 };
 
 int main() {
