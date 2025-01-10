@@ -7,13 +7,8 @@
 #include <vector>
 #include <fstream> //header zum einlesen von textdatei die songs containen
 
-//struct fuer liedinfo
-struct song {
-
-    std::string artist; 
-    std::string title; 
-    std::string genre;
-    int duration;
+//befehl fuer lesbarkeit
+using namespace std;
 
     //void functions fuer die funktionen des programms 
 
@@ -25,7 +20,6 @@ struct song {
     void BibliothekSpeichern();
     void SongDataAendern();
 
-};
 
 int main() {
 
@@ -46,15 +40,15 @@ int main() {
 
     //prüfen, ob textfile geoeffnet werden konnte
     if(!f.is_open()) {
-        std::cerr << "Datei konnte nicht geoeffnet werden";
+        cerr << "Datei konnte nicht geoeffnet werden";
         return 1;
     }
 
-    std::string s;
+    string s;
 
     //zeile fuer zeile einlesen
     while(getline(f,s))
-        std::cout << s << std::endl;
+        cout << s << std::endl;
 
     //datei schliessen
     f.close();
