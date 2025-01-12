@@ -39,17 +39,20 @@ typedef struct {
 
         //prüfen, ob textfile geoeffnet werden konnte
         if(!datei.is_open()) {
-            cerr << "Datei konnte nicht geoeffnet werden";    
+            cerr << "Datei konnte nicht geoeffnet werden" <<endl;
             return;
         }
-
+        //variable zeile einbauen und einlesefkt
         string line;
+        getline(datei,line);
 
         //zeile fuer zeile einlesen
         while(getline(datei,line)){
+
         //erweiterung um .csv-datei richtig einzulesen
             //aufteilung in zeilen
             stringstream stream(line);
+
             //Songstruktur mit hilfsvariabel fuer dauer des einzelnen Lieds
             Lied lied;
             string duration_string;
@@ -59,9 +62,8 @@ typedef struct {
             getline(stream, lied.songname, ';');
             getline(stream, lied.genre, ';');
             getline(stream, duration_string, ';');
-
-            //
-            lieder.push_back(lied); 
+            lied.duration = stoi(duration_string); //konvertieren string to integer
+            lieder.push_back(lied); //fuegt integer zeile fuer zeile hinzu
             }
         datei.close();
 
@@ -78,8 +80,6 @@ typedef struct {
         <<setw(widthGenre) << "Genre"
         <<setw(widthDuration) << "Dauer (sek)" 
         <<endl;
-
-
 
         //ausgeben des inhalts, jetzt schrittweise einzelne spalten der tabellierung
         for(const auto& lied :lieder) {
@@ -144,9 +144,10 @@ int main() {
     //switch-case fuer einzelne func
 
         switch(auswahl) {
-            case 1:
-                BibliothekEinlesen();
-                break;
+            case 1: {
+                string playlist = "playlist.csv";
+                BibliothekEinlesen(playlist);
+                break; }
             case 2:
                 LiedHinzufuegen();
                 break;
