@@ -4,8 +4,9 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
 #include <vector>
-#include <fstream> //header zum einlesen von textdatei die songs containen
+#include <fstream> //header zum einlesen von datei die songs containen
 
 //befehl fuer lesbarkeit
 using namespace std;
@@ -13,7 +14,7 @@ using namespace std;
     //void functions fuer die funktionen des programms 
 
     void BibliothekEinlesen();
-    void LiedHinzufügen();
+    void LiedHinzufuegen();
     void LiedLoeschen();
     void BibliothekAnzeigen();
     void BibliothekSpeichern();
@@ -49,24 +50,23 @@ int main() {
 
         switch(auswahl) {
             case 1:
-                void BibliothekEinlesen();
+                BibliothekEinlesen();
                 break;
             case 2:
-                void LiedHinzufügen();
+                LiedHinzufuegen();
                 break;
             case 3:
-                void LiedLoeschen();
+                LiedLoeschen();
                 break;
             case 4:
-                void BibliothekAnzeigen();
+                BibliothekAnzeigen();
                 break;
             case 5:
-                void BibliothekSpeichern();
+                BibliothekSpeichern();
                 break;
             case 6:
-                void SongDataAendern();
+                SongDataAendern();
                 break;
-
             case 7:
                 cout<<"Programm wird beendet.";
                 break;
@@ -84,41 +84,62 @@ int main() {
 
     void BibliothekEinlesen() {
 
-        ifstream f("C:/Users/Admin/Desktop/Code/VSC/swt_projekt_playlist/playlist.txt");
+        ifstream str("C:/Users/Admin/Desktop/Code/VSC/swt_projekt_playlist/playlist.csv");
 
         //prüfen, ob textfile geoeffnet werden konnte
-        if(!f.is_open()) {
-            cerr << "Datei konnte nicht geoeffnet werden";      
+        if(!str.is_open()) {
+            cerr << "Datei konnte nicht geoeffnet werden";    
+            return; 
         }
 
-        string s;
+        string line;
 
         //zeile fuer zeile einlesen
-        while(getline(f,s))
-            cout << s << std::endl;
+        while(getline(str,line)){
+        //erweiterung um .csv-datei richtig einzulesen
+            stringstream stream(line);
+            string cell;
+            vector<std::string> result;
+
+            while(getline(stream,cell,';')) {
+
+                result.push_back(cell);
+            }
+            //ausgeben des inhalts
+            for(const auto& item:result) {
+                count << item <<"";
+            }
+
+            cout << line << std::endl;
+
+        }
 
         //datei schliessen
-        f.close();
+        str.close();
 
 
     }
 
-    void LiedHinzufügen() {
-
+    void LiedHinzufuegen() {
+        cout<<"function not yet build"<<endl;
     }
 
     void LiedLoeschen() {
+        cout<<"function not yet build"<<endl;
 
     }
 
     void BibliothekAnzeigen() {
+        cout<<"function not yet build"<<endl;
 
     }
 
     void BibliothekSpeichern() {
+        cout<<"function not yet build"<<endl;
 
     }
 
     void SongDataAendern() {
+        cout<<"function not yet build"<<endl;
 
     }
