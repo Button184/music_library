@@ -97,8 +97,38 @@ string playlist = "C:/Users/Admin/Desktop/Code/VSC/swt_projekt_playlist/playlist
 
         }
    
-    void LiedHinzufuegen() {
-        cout<<"function not yet build"<<endl;
+    void LiedHinzufuegen(const string playlist) {
+        //ofstream u zum bearbeiten innerhalb einer datei, ios zum eintragen von integern, 
+        //app der modus, sodass zu datei hinzugefuegt wird, ohne zu ueberschreiben
+        ofstream datei(playlist,ios::app); 
+
+        //prüfen, ob textfile geoeffnet werden konnte
+        if(!datei.is_open()) {
+            cerr << "!!Datei konnte nicht geoeffnet werden!!" <<endl;
+            return;
+        }
+        //neues Objekt "neues Lied" implementieren
+        Lied neuesLied;
+        //Benutzerabfrage nach Infoparameter
+        cout<< "Fuege ein Neues Lied hinzu und beachte die Reihenfolge!" <<endl;
+        //input wird "ignoriert"
+        cin.ignore();
+        cout<< "Kuenstler: ";
+        getline(cin, neuesLied.artist);
+        cout<< "Titel: ";
+        getline(cin, neuesLied.songname);
+        cout<< "Genre: ";
+        getline(cin, neuesLied.genre);
+        cout<<"Dauer in Sekunden: ";
+        //inputs werden deklariert und zugewiesen (oben mit getline())
+        cin >>neuesLied.duration;
+
+        //Lied in Datei schreiben
+        datei << neuesLied.artist <<";"<<neuesLied.songname<<";"<<neuesLied.genre<<";"<<neuesLied.duration<<";";
+
+        datei.close();
+        cout<<"**Lied hinzugefuegt!**"<<endl;
+        
     }
 
     void LiedLoeschen() {
@@ -106,8 +136,8 @@ string playlist = "C:/Users/Admin/Desktop/Code/VSC/swt_projekt_playlist/playlist
 
     }
 
-    void BibliothekAnzeigen() {
-        cout<<"function not yet build"<<endl;
+    void BibliothekAnzeigen(const string playlist) {
+        BibliothekEinlesen(playlist);
 
     }
 
@@ -152,14 +182,14 @@ int main() {
                 //string playlist = "C:/Users/Admin/Desktop/Code/VSC/swt_projekt_playlist/playlist.csv";
                 BibliothekEinlesen(playlist);
                 break; }
-            case 2:
-                LiedHinzufuegen();
-                break;
+            case 2: {
+                LiedHinzufuegen(playlist);
+                break; }
             case 3:
                 LiedLoeschen();
                 break;
             case 4:
-                BibliothekAnzeigen();
+                BibliothekAnzeigen(playlist);
                 break;
             case 5:
                 BibliothekSpeichern();
@@ -168,7 +198,7 @@ int main() {
                 SongDataAendern();
                 break;
             case 7:
-                cout<<"Programm wird beendet.";
+                cout<<"Programm wird beendet. Bis zum nächsten Mal! :)";
                 break;
 
             default:
