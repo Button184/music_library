@@ -7,6 +7,7 @@
 #include <sstream>
 #include <vector>
 #include <fstream> //header zum einlesen von datei die songs containen
+#include <iomanip> //header zum implementieren einer formatierten Tabelle der Playlist hier: setw
 
 //befehl fuer lesbarkeit
 using namespace std;
@@ -20,12 +21,93 @@ using namespace std;
     void BibliothekSpeichern();
     void SongDataAendern();
 
+    //struct Song implementieren
+typedef struct {
+    string artist;
+    string songname;
+    string genre;
+    int duration;
+} Lied;
+
+//  void func
+
+    void BibliothekEinlesen(const string& playlist) {
+
+        //vektor "lieder" wird deklariert und speichert Lied-Objekte
+        vector<Lied> lieder;
+        ifstream datei(playlist);
+
+        //prüfen, ob textfile geoeffnet werden konnte
+        if(!datei.is_open()) {
+            cerr << "Datei konnte nicht geoeffnet werden";    
+            return;
+        }
+
+        string line;
+
+        //zeile fuer zeile einlesen
+        while(getline(datei,line)){
+        //erweiterung um .csv-datei richtig einzulesen
+            //aufteilung in zeilen
+            stringstream stream(line);
+            //Songstruktur mit hilfsvariabel fuer dauer des einzelnen Lieds
+            Lied lied;
+            string duration_string;
+
+            //aufgeteile felder auslesen
+            getline(stream, lied.artist, ';');
+            getline(stream, lied.songname, ';');
+            getline(stream, lied.genre, ';');
+            getline(stream, duration_string, ';');
+
+            //
+            lieder.push_back(lied);
+
+            //ausgeben des inhalts, jetzt schrittweise einzelne spalten der tabellierung
+            for(const auto& lied :lied) {
+                cout << item <<"";
+            }
+
+            cout << line << std::endl;
+
+        }
+
+        //setw setzt eine width fuer den input value
+//setw setzt eine width fuer den input value
+        //datei schliessen
+        datei.close();    
+
+    }
+
+    void LiedHinzufuegen() {
+        cout<<"function not yet build"<<endl;
+    }
+
+    void LiedLoeschen() {
+        cout<<"function not yet build"<<endl;
+
+    }
+
+    void BibliothekAnzeigen() {
+        cout<<"function not yet build"<<endl;
+
+    }
+
+    void BibliothekSpeichern() {
+        cout<<"function not yet build"<<endl;
+
+    }
+
+    void SongDataAendern() {
+        cout<<"function not yet build"<<endl;
+
+    }
 
 int main() {
 
     int auswahl;
 
-    // --- programmdurchfuehrung mit cout
+    //programmdurchfuehrung des users mit cout
 
     do {
         cout<<"**************************"<<endl;
@@ -44,7 +126,6 @@ int main() {
 
     cout << "Wähle eine Aktion aus (1-7):";
     cin >> auswahl;
-
     
     //switch-case fuer einzelne func
 
@@ -79,66 +160,3 @@ int main() {
 
     return 0;
 }
-
-//  void func
-
-    void BibliothekEinlesen() {
-
-        ifstream str("C:/Users/Admin/Desktop/Code/VSC/swt_projekt_playlist/playlist.csv");
-
-        //prüfen, ob textfile geoeffnet werden konnte
-        if(!str.is_open()) {
-            cerr << "Datei konnte nicht geoeffnet werden";    
-            return; 
-        }
-
-        string line;
-
-        //zeile fuer zeile einlesen
-        while(getline(str,line)){
-        //erweiterung um .csv-datei richtig einzulesen
-            stringstream stream(line);
-            string cell;
-            vector<std::string> result;
-
-            while(getline(stream,cell,';')) {
-
-                result.push_back(cell);
-            }
-            //ausgeben des inhalts
-            for(const auto& item:result) {
-                cout << item <<"";
-            }
-
-            cout << line << std::endl;
-
-        }
-
-        //datei schliessen
-        str.close();
-
-    }
-
-    void LiedHinzufuegen() {
-        cout<<"function not yet build"<<endl;
-    }
-
-    void LiedLoeschen() {
-        cout<<"function not yet build"<<endl;
-
-    }
-
-    void BibliothekAnzeigen() {
-        cout<<"function not yet build"<<endl;
-
-    }
-
-    void BibliothekSpeichern() {
-        cout<<"function not yet build"<<endl;
-
-    }
-
-    void SongDataAendern() {
-        cout<<"function not yet build"<<endl;
-
-    }
