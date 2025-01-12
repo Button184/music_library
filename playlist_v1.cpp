@@ -176,7 +176,6 @@ int main() {
     cin >> auswahl;
     
     //switch-case fuer einzelne func
-
         switch(auswahl) {
             case 1: {
                 //string playlist = "C:/Users/Admin/Desktop/Code/VSC/swt_projekt_playlist/playlist.csv";
