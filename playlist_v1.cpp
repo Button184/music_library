@@ -29,9 +29,11 @@ typedef struct {
     int duration;
 } Lied;
 
+string playlist = "C:/Users/Admin/Desktop/Code/VSC/swt_projekt_playlist/playlist.csv";
+
 //  void func
 
-    void BibliothekEinlesen(const string& playlist) {
+    void BibliothekEinlesen(const string playlist) {
 
         //vektor "lieder" wird deklariert und speichert Lied-Objekte
         vector<Lied> lieder;
@@ -39,7 +41,7 @@ typedef struct {
 
         //prüfen, ob textfile geoeffnet werden konnte
         if(!datei.is_open()) {
-            cerr << "Datei konnte nicht geoeffnet werden" <<endl;
+            cerr << "!!Datei konnte nicht geoeffnet werden!!" <<endl;
             return;
         }
         //variable zeile einbauen und einlesefkt
@@ -80,6 +82,8 @@ typedef struct {
         <<setw(widthGenre) << "Genre"
         <<setw(widthDuration) << "Dauer (sek)" 
         <<endl;
+
+        cout << string(widthArtist+widthSong+widthGenre+widthDuration,'-')<<endl;
 
         //ausgeben des inhalts, jetzt schrittweise einzelne spalten der tabellierung
         for(const auto& lied :lieder) {
@@ -145,7 +149,7 @@ int main() {
 
         switch(auswahl) {
             case 1: {
-                string playlist = "playlist.csv";
+                //string playlist = "C:/Users/Admin/Desktop/Code/VSC/swt_projekt_playlist/playlist.csv";
                 BibliothekEinlesen(playlist);
                 break; }
             case 2:
