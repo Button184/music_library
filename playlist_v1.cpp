@@ -107,7 +107,7 @@ int main() {
             }
             //ausgeben des inhalts
             for(const auto& item:result) {
-                count << item <<"";
+                cout << item <<"";
             }
 
             cout << line << std::endl;
@@ -116,7 +116,6 @@ int main() {
 
         //datei schliessen
         str.close();
-
 
     }
 
