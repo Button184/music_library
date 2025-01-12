@@ -61,24 +61,38 @@ typedef struct {
             getline(stream, duration_string, ';');
 
             //
-            lieder.push_back(lied);
+            lieder.push_back(lied); 
+            }
+        datei.close();
 
-            //ausgeben des inhalts, jetzt schrittweise einzelne spalten der tabellierung
-            for(const auto& lied :lied) {
-                cout << item <<"";
+        //festlegen der breite der Kategorien (const int, da nur int nicht global wäre)
+        const int widthArtist = 30;
+        const int widthSong = 40;
+        const int widthGenre = 30;
+        const int widthDuration = 20;
+
+        //tabellenueberschrift ("left", damit die ausgabe linksbuendig ist)
+        cout <<left 
+        <<setw(widthArtist) << "Kuenstler"
+        <<setw(widthSong) << "Titel"
+        <<setw(widthGenre) << "Genre"
+        <<setw(widthDuration) << "Dauer (sek)" 
+        <<endl;
+
+
+
+        //ausgeben des inhalts, jetzt schrittweise einzelne spalten der tabellierung
+        for(const auto& lied :lieder) {
+            cout << left
+            <<setw(widthArtist) << lied.artist
+            <<setw(widthSong) << lied.songname
+            <<setw(widthGenre) << lied.genre
+            <<setw(widthDuration) << lied.duration 
+            <<endl;
             }
 
-            cout << line << std::endl;
-
         }
-
-        //setw setzt eine width fuer den input value
-//setw setzt eine width fuer den input value
-        //datei schliessen
-        datei.close();    
-
-    }
-
+   
     void LiedHinzufuegen() {
         cout<<"function not yet build"<<endl;
     }
