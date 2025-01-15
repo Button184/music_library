@@ -149,7 +149,6 @@ int main() {
         cout<<"6. Liedinformationen aendern"<<endl;
         cout<<"7. Programm beenden"<<endl;
     
-
     cout << "Wähle eine Aktion aus (1-7):";
     cin >> auswahl;
     
